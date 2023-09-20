@@ -21,3 +21,15 @@
 <turbo-frame id='messages' src='/messages'>
   <p>This message will be replaced by the response from /messages.</p>
 </turbo-frame>
+
+<turbo-stream action='append' target='messages'>
+  <template>
+    <div id='message_1'>My new message!</div>
+  </template>
+</turbo-stream>
+
+<turbo-stream action='replace' target='message_1'>
+  <template>
+    <div id='message_1'>This changes the existing message!</div>
+  </template>
+</turbo-stream>
