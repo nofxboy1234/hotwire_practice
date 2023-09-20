@@ -12,3 +12,8 @@
 </div>
 
 <%= link_to "New cat", new_cat_path %>
+
+<turbo-frame id='new_message'>
+  <form action='/messages' method='post'>
+  </form>
+</turbo-frame>
