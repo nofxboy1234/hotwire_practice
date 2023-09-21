@@ -7,4 +7,5 @@
   <%= link_to "Back to cats", cats_path %>
 
   <%= button_to "Destroy this cat", @cat, method: :delete %>
+  <%= link_to "Destroy this cat", @cat, data: { turbo_method: :delete } %>
 </div>
