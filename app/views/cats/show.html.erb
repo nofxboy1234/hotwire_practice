@@ -3,9 +3,9 @@
 <%= render @cat %>
 
 <div>
-  <%= link_to "Edit this cat", edit_cat_path(@cat) %> |
-  <%= link_to "Back to cats", cats_path %>
+  <%= link_to "Edit this cat", edit_cat_path(@cat), data: { turbo_method: :get, turbo_confirm: 'Edit this cat?'} %> |
+  <%= link_to "Back to cats", cats_path, data: { turbo_method: :get, turbo_confirm: 'Back to cats index?' } %>
 
-  <%= button_to "Destroy this cat", @cat, method: :delete %>
-  <%= link_to "Destroy this cat", @cat, data: { turbo_method: :delete } %>
+  <%= button_to "Destroy this cat", @cat, method: :delete, data: { turbo_confirm: 'Destroy this cat?'} %>
+  <%= link_to "Destroy this cat", @cat, data: { turbo_method: :delete, turbo_confirm: 'Destroy this cat?' } %>
 </div>
