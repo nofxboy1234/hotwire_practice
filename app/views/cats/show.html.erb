@@ -9,3 +9,10 @@
   <%= button_to "Destroy this cat", @cat, method: :delete, data: { turbo_confirm: 'Destroy this cat?'} %>
   <%= link_to "Destroy this cat", @cat, data: { turbo_method: :delete, turbo_confirm: 'Destroy this cat?' } %>
 </div>
+
+<hr>
+
+<%= turbo_frame_tag @cat do %>
+  <div>Content for our cat!</div>
+  <%= link_to 'Edit Cat', edit_cat_path(@cat) %>
+<% end %>

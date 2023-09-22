@@ -8,3 +8,10 @@
   <%= link_to "Show this cat", @cat %> |
   <%= link_to "Back to cats", cats_path %>
 </div>
+
+<hr>
+
+<%= turbo_frame_tag @cat do %>
+  <div>Form to edit the cat</div>
+  <%= link_to 'Return to Cat', @cat %>
+<% end %>

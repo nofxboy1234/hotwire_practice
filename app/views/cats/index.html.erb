@@ -11,11 +11,13 @@
   <% end %>
 </div>
 
-<%= link_to "New cat", new_cat_path %><br><br>
+<%= link_to "New cat", new_cat_path %>
+
+<hr>
 
 <% @cats.each do |cat| %>
   <%= turbo_frame_tag cat do %>
-    <%= cat.name %>
+    <div><%= cat.name %></div>
   <% end %>
   
 <% end %>
