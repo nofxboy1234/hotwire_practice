@@ -24,5 +24,14 @@
 <br>
 
 <%= link_to 'Edit cat 2', edit_cat_path(Cat.find(2)), data: { turbo_frame: 'list-region'} %><br>
-
 <%= turbo_frame_tag 'list-region' %>
+
+<br>
+
+<%= turbo_frame_tag 'list-region', src: edit_cat_path(Cat.find(2)) do %>
+  <div>
+    I am a placeholder! After the request to edit_cat_path is finished,
+    I will be replaced with the content inside of that page's turbo turbo_frame
+    with the id of 'list-region'.
+  </div>
+<% end %>
