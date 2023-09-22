@@ -11,25 +11,11 @@
   <% end %>
 </div>
 
-<%= link_to "New cat", new_cat_path %>
+<%= link_to "New cat", new_cat_path %><br><br>
 
-<turbo-frame id='new_message'>
-  <form action='/messages' method='post'>
-  </form>
-</turbo-frame>
-
-<turbo-frame id='messages' src='/messages'>
-  <p>This message will be replaced by the response from /messages.</p>
-</turbo-frame>
-
-<turbo-stream action='append' target='messages'>
-  <template>
-    <div id='message_1'>My new message!</div>
-  </template>
-</turbo-stream>
-
-<turbo-stream action='replace' target='message_1'>
-  <template>
-    <div id='message_1'>This changes the existing message!</div>
-  </template>
-</turbo-stream>
+<% @cats.each do |cat| %>
+  <%= turbo_frame_tag cat do %>
+    <%= cat.name %>
+  <% end %>
+  
+<% end %>
