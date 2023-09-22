@@ -13,5 +13,6 @@
 
 <%= turbo_frame_tag @cat do %>
   <div>Form to edit the cat</div>
+  <%# link_to 'Return to Cat', @cat, data: { turbo_frame: '_top' } %>
   <%= link_to 'Return to Cat', @cat %>
 <% end %>
