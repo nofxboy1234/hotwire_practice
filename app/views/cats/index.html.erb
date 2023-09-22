@@ -35,3 +35,9 @@
     with the id of 'list-region'.
   </div>
 <% end %>
+
+<%= turbo_frame_tag 'list-region', src: edit_cat_path(Cat.find(2)), loading: 'lazy' do %>
+  <div>
+    I am a placeholder! I will be replaced through lazy loading when a user scrolls down to see me on the page!
+  </div>
+<% end %>
