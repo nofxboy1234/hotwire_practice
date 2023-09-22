@@ -19,5 +19,10 @@
   <%= turbo_frame_tag cat do %>
     <div><%= cat.name %></div>
   <% end %>
-  
 <% end %>
+
+<br>
+
+<%= link_to 'Edit cat 2', edit_cat_path(Cat.find(2)), data: { turbo_frame: 'list-region'} %><br>
+
+<%= turbo_frame_tag 'list-region' %>

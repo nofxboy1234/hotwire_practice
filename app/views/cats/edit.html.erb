@@ -16,3 +16,9 @@
   <%# link_to 'Return to Cat', @cat, data: { turbo_frame: '_top' } %>
   <%= link_to 'Return to Cat', @cat %>
 <% end %>
+
+<%= turbo_frame_tag 'list-region' do %>
+  <div>Edit cat_2!</div>
+  <div><%= @cat %></div>
+  <div><%= @cat.id %></div>
+<% end %>
