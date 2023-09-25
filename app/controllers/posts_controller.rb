@@ -15,10 +15,15 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
 
-    if @post.save
-      redirect_to posts_path
-    else
-      render :new
+    respond_to do |format|
+      if @post.save
+        # redirect_to posts_path
+        format.turbo_stream # create.turbo_stream.erb
+        # format.turbo_stream { render turbo_stream: turbo_stream.append('posts', @post) }
+      else
+        # render :new
+        format.html { render :new, status: :unprocessable_entity } # new.html.erb
+      end
     end
   end
 
