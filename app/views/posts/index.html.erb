@@ -13,6 +13,12 @@
   <%= tag.button data: { action: 'click->alert#show' } do %>Alert me!<% end %>
 <% end %>
 
+<%= content_tag :div, data: { controller: 'alert' } do %>
+  <%= content_tag :button, data: { action: 'click->alert#show' } do %>
+    Alert me!
+  <% end %>
+<% end %>
+
 <div data-controller='greeter'>
   <input type='text' data-greeter-target='name'>
   <button data-action='click->greeter#greet'>Greet me</button>
