@@ -4,6 +4,10 @@ export default class extends Controller {
   static targets = ['name', 'output'];
   static values = { count: { type: Number, default: 0 } };
 
+  connect() {
+    this.countValue = 5;
+  }
+
   addOne() {
     this.countValue++;
   }
