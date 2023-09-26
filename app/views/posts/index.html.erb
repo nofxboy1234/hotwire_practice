@@ -5,9 +5,13 @@
   <%= render @posts %>
 </div>
 
-<div data-controller='alert'>
+<div <%= tag.attributes data: { controller: 'alert' } %>>
   <button data-action='click->alert#show'>Alert me!</button>
 </div>
+
+<%= tag.div data: { controller: 'alert' } do %>
+  <%= tag.button data: { action: 'click->alert#show' } do %>Alert me!<% end %>
+<% end %>
 
 <div data-controller='greeter'>
   <input type='text' data-greeter-target='name'>
