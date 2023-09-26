@@ -19,13 +19,14 @@
   <% end %>
 <% end %>
 
-<div data-controller='greeter'>
+<div data-controller='greeter' data-greeter-change-class='hidden'>
   <input type='text' data-greeter-target='name'>
   <button data-action='click->greeter#greet'>Greet me!</button>
   <div data-greeter-target='output'></div>
   <div data-greeter-count-value='0'></div>
+
+  <div data-greeter-target='classdiv'>
+    <button data-action='click->greeter#toggle'>Toggle class</button>
+  </div>
 </div>
 
-<div data-controller='toggle' data-toggle-change-class='hidden'>
-  <button data-action='click->toggle#toggle'>Toggle class</button>
-</div>
