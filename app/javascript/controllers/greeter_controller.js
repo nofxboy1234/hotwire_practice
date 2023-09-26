@@ -25,7 +25,7 @@ export default class extends Controller {
   toggle() {
     console.log(this.element);
     console.log(this.classdivTarget)
-    this.classdivTarget.classList.toggle(this.changeClass);
     this.element.classList.toggle(this.changeClass);
+    // this.classdivTarget.classList.toggle(this.changeClass);
   }
 }
